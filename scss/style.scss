@@ -1,0 +1,23 @@
+* {
+    font-family: 'Fira sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+input, button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+@import 'blocks/header';
+@import 'blocks/content';
+@import 'blocks/footer';
+@import 'blocks/dropdown';
+@import 'blocks/modal';

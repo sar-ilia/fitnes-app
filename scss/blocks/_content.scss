@@ -1,0 +1,16 @@
+.content {
+    height: 100vh;
+    background-color: #374151;
+    padding-top: 86px;
+    &__div {
+        padding: 10px;
+        background-color: #111827;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+    &__titel {
+        font-size: 15px;
+        font-weight: 300;
+        color: #6B7280;
+    }
+}

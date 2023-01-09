@@ -1,0 +1,26 @@
+.footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 10px 0;
+    background-color: #374151;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.btn {
+    color: #EC4899;
+    font-size: 40px;
+    font-weight: 700;
+    background-image: linear-gradient(to right, #EC4899, #8B5Cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transition: 0.4s;
+    &:hover {
+        opacity: 0.8;
+    }
+    &:active {
+        opacity: 0.6;
+    }
+}

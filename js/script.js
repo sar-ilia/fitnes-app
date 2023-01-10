@@ -36,36 +36,32 @@ document.addEventListener('DOMContentLoaded', () => {
     
     //_____
 
-    const modal = document.querySelector('.modal'),
-    close = modal.querySelector('.modal__close'),
-    start = document.querySelector('#start');
+    const modal = document.querySelector('#modal'),
+          close = modal.querySelector('.close'),
+          start = document.querySelector('#start');
 
-    function openModal() {
-        start.addEventListener('click', () => {
-            modal.style.display = 'block';
-        });
-    }
+    start.addEventListener('click', () => {
+        modal.style.display = 'block';
+    });
 
-    openModal();
-
-    function closeModal() {
-        close.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-    }
-
-    closeModal();
+    close.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
 
     function removeForm() {
         options.forEach(e => {
             e.classList.remove('active');
         });
-        selected.innerHTML = 'Exercise';
+        selected.innerHTML = 'Type of exercise';
+        weight.value = '';
+        repeats.value = '';
     }
 
     //_____
 
-    const addElement = document.querySelector('#add');
+    const addElement = document.querySelector('#add'),
+          weight = document.querySelector('#weight'),
+          repeats = document.querySelector('#repeats');
 
     addElement.addEventListener('click', () => {
 
@@ -74,14 +70,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const contentElement = document.createElement('h2');
               contentElement.classList.add('content__titel');
-              contentElement.textContent = `Exercise: ${select.textContent}`;
+              contentElement.textContent = `Exercise: ${selected.textContent}`;
 
-        element.appendChild(contentElement);
-        content.appendChild(element);
+        const deleteElement = document.createElement('div');
+              deleteElement.classList.add('close');
+              deleteElement.innerHTML = '&times;';
+              deleteElement.setAttribute('id', 'del_elem');
 
-        modal.style.display = 'none';
+        const wrapper = document.createElement('div');
+              wrapper.classList.add('content__wrapper');
+        
+        const descr = document.createElement('div');
+              descr.classList.add('content__descr');
+              descr.textContent = `${weight.value}kg x ${repeats.value}`;
 
-        removeForm();
+        const deleteDescr = document.createElement('button');
+              deleteDescr.classList.add('btn_descr');
+              deleteDescr.textContent = 'DELETE';
+
+        const oneMore = document.createElement('button');
+              oneMore.classList.add('btn', 'btn_mini');
+              oneMore.textContent = 'one more';
+
+
+        if (selected.textContent !== 'Type of exercise' && weight.value !== '' && repeats.value !== '' && weight.value != 0 && repeats.value != 0) {
+            element.appendChild(contentElement);
+            content.appendChild(element);
+            element.appendChild(deleteElement);
+            element.appendChild(wrapper);
+            wrapper.appendChild(descr);
+            wrapper.appendChild(deleteDescr);
+            element.appendChild(oneMore);
+
+            modal.style.display = 'none';
+
+            removeForm();
+        }
+
+        deleteElement.addEventListener('click', () => {
+            content.removeChild(element);
+        });
+
+        deleteDescr.addEventListener('click', () => {
+            element.removeChild(wrapper);
+        });
+
     });
+
+    //____
+
 
 });

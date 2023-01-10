@@ -16,18 +16,6 @@
         font-size: 20px;
         text-align: center;
     }
-    &__close {
-        position: absolute;
-        top: 5px;
-        right: 14px;
-        font-size: 30px;
-        color: #6B7280;
-        opacity: .5;
-        font-weight: 700;
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
-    }
     input {
         margin: 0;
         margin-bottom: 20px;
@@ -43,4 +31,14 @@
     ::placeholder {
         color: #6B7280;
     }
+}
+.close {
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    font-size: 25px;
+    color: #6B7280;
+    font-weight: 300;
+    border: none;
+    cursor: pointer;
 }

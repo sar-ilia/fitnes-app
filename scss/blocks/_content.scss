@@ -7,10 +7,30 @@
         background-color: #111827;
         border-radius: 10px;
         margin-bottom: 10px;
+        position: relative;
     }
     &__titel {
         font-size: 15px;
         font-weight: 300;
         color: #6B7280;
+    }
+    &__wrapper {
+        display: flex;
+        margin: 5px 0 0 20px;
+    }
+    &__descr {
+        font-size: 25px;
+        font-weight: 300;
+        color: #FFF;
+    }
+    .btn_mini {
+        font-size: 20px;
+        margin-right: 1px;
+    }
+    .btn_descr {
+        font-size: 15px;
+        margin-left: 10px;
+        color: crimson;
+        cursor: pointer;
     }
 }

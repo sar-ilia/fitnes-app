@@ -3,7 +3,8 @@
     display: block;
     width: 100%;
     padding: 10px 0;
-    background-color: #374151;
+    overflow: hidden;
+    z-index: 2;
     &__title {
         font-family: 'Monoton', cursive;
         font-size: 45px;

@@ -20,14 +20,17 @@
         <div class="content">
             <div class="container">
 
-<!--                 <div class="content__div">
+                <!-- <div class="content__div">
                     <h2 class="content__titel">test</h2>
+                    <div class="close" id="del_elem">×</div>
                     <div class="content__wrapper">
-                        <div class="content__descr">50kg x 10</div>
-                        <button class="btn_descr">DELETE</button>
+                        <ul class="content__list">
+                            <li class="content__item">1kg x 1
+                                <button class="btn_descr">DELETE</button>
+                            </li>
+                        </ul>
                     </div>
-
-                    <button class="btn btn_mini">one more</button>
+                    <button class="btn btn_mini">one more?</button>
                 </div> -->
 
             </div>
@@ -39,46 +42,48 @@
         </div>
     </footer>
 
-    <div id="modal" class="modal">
-        <div data-close class="close">&times;</div>
-        <div class="modal__titel">New exercise</div>
-
-        <div class="dropdown">
-            <div class="dropdown__select">
-                <span class="dropdown__selected">Type of exercise</span>
-                <div class="dropdown__caret"></div>
+    <div class="modals">
+        <div id="modal" class="modal">
+            <div id="close_modal" class="close">&times;</div>
+            <div class="modal__titel">New exercise</div>
+    
+            <div class="dropdown">
+                <div class="dropdown__select">
+                    <span class="dropdown__selected">Type of exercise</span>
+                    <div class="dropdown__caret"></div>
+                </div>
+                <ul class="dropdown__menu">
+                    <li>Deadlifts</li>
+                    <li>Back squats</li>
+                    <li>Front squats</li>
+                    <li>Bench press</li>
+                    <li>Incline bench press</li>
+                    <li>Overhead press</li>
+                    <li>Push press</li>
+                    <li>Bent-over rows</li>
+                    <li>Snatch</li>
+                </ul>
             </div>
-            <ul class="dropdown__menu">
-                <li>Deadlifts</li>
-                <li>Back squats</li>
-                <li>Front squats</li>
-                <li>Bench press</li>
-                <li>Incline bench press</li>
-                <li>Overhead press</li>
-                <li>Push press</li>
-                <li>Bent-over rows</li>
-                <li>Snatch</li>
-            </ul>
+    
+            <form action="#">
+                <input type="number" id="weight" placeholder="Weight" class="modal__input">
+                <input type="number" id="repeats" placeholder="Number of repeats" class="modal__input">
+                <button id="add" class="btn">START</button>
+            </form>
+    
         </div>
-
-        <form action="#">
-            <input type="number" id="weight" placeholder="Weight" class="modal__input">
-            <input type="number" id="repeats" placeholder="Number of repeats" class="modal__input">
-            <button id="add" class="btn">START</button>
-        </form>
-
-    </div>
-
-    <div id="modalRepeats" class="modal">
-        <div data-close class="close">&times;</div>
-        <div class="modal__titel">Add repeats</div>
-
-        <form action="#">
-            <input type="number" id="weightRepeats" placeholder="Weight" class="modal__input">
-            <input type="number" id="repeatsRepeats" placeholder="Number of repeats" class="modal__input">
-            <button id="addRepeats" class="btn">Add</button>
-        </form>
-
+    
+        <div id="modalRepeats" class="modal">
+            <div id="close_modal" class="close">&times;</div>
+            <div class="modal__titel">Add repeats</div>
+    
+            <form action="#">
+                <input type="number" id="weightRepeats" placeholder="Weight" class="modal__input">
+                <input type="number" id="repeatsRepeats" placeholder="Number of repeats" class="modal__input">
+                <button id="addRepeats" class="btn">Add</button>
+            </form>
+    
+        </div>
     </div>
     
     <script src="js/script.js"></script>

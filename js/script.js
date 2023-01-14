@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 for (let i = 0; i < btns.length; i++) {
                   btns[i].removeAttribute('id');
                 }
-                e.target.setAttribute('id','qwe');
+                e.target.setAttribute('id','activeBtn');
             }
         }
     });
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (e.target && e.target.matches('#addRepeats')) {
 
-            const btnActive = document.querySelector('#qwe').previousElementSibling.firstElementChild;
+            const btnActive = document.querySelector('#activeBtn').previousElementSibling.firstElementChild;
 
             const item = document.createElement('li');
                   item.classList.add('content__item');

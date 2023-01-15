@@ -45,6 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     start.addEventListener('click', () => {
         modal.style.display = 'block';
+        modals.style.display = 'block';
+        document.body.style.overflow = 'hidden';
     });
 
     function removeForm(weightContent, numberContent) {
@@ -93,6 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalElem.style.display = 'none';
                 removeForm(weightElem, numberElem);
                 removeDropdown();
+                modals.style.display = 'none';
+                document.body.style.overflow = '';
             });
         });
     }
@@ -172,12 +176,17 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.style.display = 'none';
 
             removeForm(weight, number);
+
+            modals.style.display = 'none';
+            document.body.style.overflow = '';
         }
     });
 
     content.addEventListener('click', (e) => {
         if (e.target && e.target.matches('button.btn_mini')) {
             modalRepeats.style.display = 'block';
+            modals.style.display = 'block';
+            document.body.style.overflow = 'hidden';
 
             const btns = document.querySelectorAll('.btn_mini');
             
@@ -209,6 +218,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 btnActive.appendChild(item);
     
                 modalRepeats.style.display = 'none';
+                modals.style.display = 'none';
+                document.body.style.overflow = '';
     
                 removeForm(weightRepeats, numberRepeats);
             }

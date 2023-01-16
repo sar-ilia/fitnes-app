@@ -1,5 +1,9 @@
 .modals {
     display: none;
+    /* visibility: hidden;
+    opacity: 0;
+    transition: 0.8s all; */
+
     position: fixed;
     top: 0;
     width: 100%;
@@ -14,15 +18,13 @@
     z-index: 1050;
     max-width: 300px;
     display: none;
+    /* visibility: hidden;
+    opacity: 0;
+    transition: 0.8s all; */
+
     overflow: hidden;
     background-color: #23242a;
     border-radius: 15px;
-    &__titel {
-        color: #6B7280;
-        font-size: 20px;
-        text-align: center;
-        margin-bottom: 20px;
-    }
     &__input {
         margin: 0;
         width: 75px;

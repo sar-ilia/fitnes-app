@@ -44,6 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
           start = document.querySelector('#start');
 
     start.addEventListener('click', () => {
+        /* modal.style.visibility = 'visible';
+        modals.style.visibility = 'visible';
+        modal.style.opacity = '1';
+        modals.style.opacity = '1'; */
         modal.style.display = 'block';
         modals.style.display = 'block';
         document.body.style.overflow = 'hidden';
@@ -228,5 +232,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //____
 
+    const submit = document.querySelector('#submit'),
+          name = document.querySelector('#name'),
+          overlay = document.querySelector('.overlay');
 
+    function localStorage() {
+        submit.addEventListener('click', () => {
+            
+            if (name.value !== '') {
+                window.localStorage.setItem('username', name.value);
+                overlay.style.visibility = 'hidden';
+                overlay.style.opacity = '0';
+            }
+        });
+    }
+
+    localStorage();
 });

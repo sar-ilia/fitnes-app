@@ -13,6 +13,16 @@ body {
     overflow: hidden;
 }
 
+.titel {
+    color: #6B7280;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    &_reg {
+        margin: 10px 0;
+    }
+}
+
 input, button {
     appearance: none;
     border: none;
@@ -26,3 +36,4 @@ input, button {
 @import 'blocks/footer';
 @import 'blocks/dropdown';
 @import 'blocks/modal';
+@import 'blocks/registration';

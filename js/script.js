@@ -39,6 +39,49 @@ document.addEventListener('DOMContentLoaded', () => {
     
     //_____
 
+    const overlay = document.querySelector('.overlay'),
+          yourName = document.querySelector('.yourName'),
+          welcome = document.querySelector('.welcome');
+
+    let localStorage = window.localStorage.getItem('username');
+
+    function hidden() {
+        overlay.style.visibility = 'hidden';
+        overlay.style.opacity = '0';
+    }
+
+    if (!localStorage) {
+        welcome.style.display = 'none';
+
+        const reg = document.createElement('div');
+              reg.classList.add('registration');
+              reg.innerHTML = `
+                <form action="#" class="registration__form">
+                    <div class="title title_reg">Enter your name:</div>
+                    <input type="text" id="name" class="registration__input modal__input" placeholder="Your name">
+                
+                </form>
+                <button id="submit" class="btn">SUBMIT</button>
+              `;
+              overlay.appendChild(reg);
+
+        overlay.addEventListener('click', (e) => {
+            if (e.target && e.target.matches('#submit')) {
+                const name = document.querySelector('#name');
+                
+                if (name.value !== '') {
+                    window.localStorage.setItem('username', name.value);
+                    setTimeout(hidden, 1000);
+                }
+            }
+        });
+    } else {
+        yourName.innerHTML = localStorage;
+        setTimeout(hidden, 2000);
+    }
+
+    //_____
+
     const modal = document.querySelector('.modal'),
           close = document.querySelectorAll('#close_modal'),
           start = document.querySelector('#start');
@@ -232,20 +275,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //____
 
-    const submit = document.querySelector('#submit'),
-          name = document.querySelector('#name'),
-          overlay = document.querySelector('.overlay');
 
-    function localStorage() {
-        submit.addEventListener('click', () => {
-            
-            if (name.value !== '') {
-                window.localStorage.setItem('username', name.value);
-                overlay.style.visibility = 'hidden';
-                overlay.style.opacity = '0';
-            }
-        });
-    }
-
-    localStorage();
 });

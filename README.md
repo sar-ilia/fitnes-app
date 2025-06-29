@@ -28,7 +28,7 @@ Users can choose exercises, set weight and reps, add multiple sets, and track th
 
 ## 🖥️ Live Preview
 
-https://sar-ilia.github.io/fitnes-app/
+https://sar-ilia.github.io/fitness-app/
 
 ---
 
